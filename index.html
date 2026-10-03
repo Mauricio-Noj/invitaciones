@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graduación · Ing. Brandon Noj</title>
+  <meta name="description" content="Te invito a celebrar mi graduación como Ingeniero en Ciencias y Sistemas. Sábado 10 de octubre de 2026, 5:00 pm.">
+  <meta property="og:title" content="¡Lo logré! · Ing. Brandon Mauricio Noj Romero">
+  <meta property="og:description" content="Celebremos juntos mi graduación como Ingeniero en Ciencias y Sistemas · Sábado 10 de octubre, 5:00 pm">
+  <meta property="og:image" content="img/IMG_5.jpeg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#14133a">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=JetBrains+Mono:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bloqueado">
+
+  <!-- ===== Pantalla de entrada ===== -->
+  <div id="intro" class="intro" role="dialog" aria-label="Abrir invitación">
+    <div class="intro__terminal" aria-hidden="true">
+      <div class="intro__barra"><span></span><span></span><span></span><p>graduacion.sh</p></div>
+      <pre id="intro-codigo" class="intro__codigo"></pre>
+    </div>
+    <button id="btn-abrir" class="btn btn--oro intro__btn">Abrir invitación</button>
+    <p class="intro__nota">Se reproducirá música 🎵</p>
+  </div>
+
+  <!-- ===== Control de música ===== -->
+  <button id="btn-musica" class="musica" aria-label="Pausar música" hidden>
+    <span class="musica__icono">♪</span>
+  </button>
+  <audio id="audio" src="assets/musica/la-chalana.mp3" loop preload="auto"></audio>
+
+  <main>
+    <!-- ===== Portada ===== -->
+    <header class="portada">
+      <p class="portada__univ">Universidad de San Carlos de Guatemala<br><span>Facultad de Ingeniería</span></p>
+      <p class="portada__logre">¡Lo logré!</p>
+      <h1 class="portada__nombre" data-campo="nombre"></h1>
+      <p class="portada__titulo" data-campo="titulo"></p>
+      <figure class="portada__foto marco">
+        <img src="img/IMG_5.jpeg" alt="Brandon Noj con toga y birrete en el acto de graduación" width="2048" height="1365">
+      </figure>
+      <a href="#mensaje" class="portada__bajar" aria-label="Ver más">
+        <span></span>
+      </a>
+    </header>
+
+    <!-- ===== Mensaje ===== -->
+    <section id="mensaje" class="seccion revelar">
+      <div class="codigo" aria-label="Mensaje en código">
+<pre><span class="c-com">// Después de años de esfuerzo...</span>
+<span class="c-kw">const</span> <span class="c-var">graduado</span> = {
+  nombre: <span class="c-str">"Brandon Mauricio Noj Romero"</span>,
+  titulo: <span class="c-str">"Ingeniero en Ciencias y Sistemas"</span>,
+  estado: <span class="c-str">"compilado con éxito ✔"</span>
+};
+
+<span class="c-var">graduado</span>.<span class="c-fn">celebrarCon</span>(<span class="c-str">"contigo"</span>);</pre>
+      </div>
+      <p class="texto-grande">
+        Cada línea de código, cada desvelo y cada reto me trajeron hasta aquí.
+        Hoy cierro este capítulo y nada me haría más feliz que <strong>celebrarlo contigo</strong>.
+      </p>
+    </section>
+
+    <!-- ===== Fecha y cuenta regresiva ===== -->
+    <section class="seccion seccion--oscura revelar">
+      <h2 class="titulo">Te espero</h2>
+      <p class="fecha">
+        <span class="fecha__dia">Sábado</span>
+        <span class="fecha__num">10</span>
+        <span class="fecha__mes">Octubre · 2026</span>
+      </p>
+      <p class="hora">5:00 p. m.</p>
+      <div id="cuenta" class="cuenta" aria-live="polite">
+        <div><span data-u="dias">0</span><small>días</small></div>
+        <div><span data-u="horas">0</span><small>horas</small></div>
+        <div><span data-u="min">0</span><small>min</small></div>
+        <div><span data-u="seg">0</span><small>seg</small></div>
+      </div>
+      <p id="cuenta-fin" class="cuenta-fin" hidden>¡Hoy es el gran día! 🎉</p>
+      <a id="btn-calendario" class="btn btn--borde" target="_blank" rel="noopener">📅 Agregar a mi calendario</a>
+    </section>
+
+    <!-- ===== Dedicatoria ===== -->
+    <section class="seccion revelar">
+      <h2 class="titulo">Con gratitud</h2>
+      <p class="subtitulo">Este logro no es solo mío</p>
+      <div class="dedicatoria">
+        <article>
+          <h3>A Dios</h3>
+          <p>Por permitirme alcanzar esta etapa y enseñarme que cada tropiezo fue una lección.</p>
+        </article>
+        <article>
+          <h3>A mis padres</h3>
+          <p class="dedicatoria__nombres">Víctor Noj &amp; Ana Romero</p>
+          <p>Por ser la base firme sobre la cual he construido mi vida. Su amor y respaldo han estado en cada paso.</p>
+        </article>
+        <article>
+          <h3>A mis hermanos</h3>
+          <p class="dedicatoria__nombres">Víctor Alfonso, Óscar Enrique &amp; Edgar Adolfo</p>
+          <p>Por acompañarme siempre con su apoyo incondicional.</p>
+        </article>
+      </div>
+      <article class="familias">
+        <h3>A mi familia</h3>
+        <p>Por su cariño, su apoyo y por ser parte de este camino.</p>
+        <ul id="familias" class="familias__lista"></ul>
+      </article>
+      <blockquote class="memoria">
+        <p>“Mi primer maestro y el origen de mi pasión por la tecnología. Su ejemplo sigue guiando mi camino.”</p>
+        <cite>En memoria de Mario Romero</cite>
+      </blockquote>
+    </section>
+
+    <!-- ===== Celebración ===== -->
+    <section class="seccion seccion--oscura revelar">
+      <h2 class="titulo">La celebración</h2>
+      <div class="lugar">
+        <p class="lugar__icono" aria-hidden="true">🥂</p>
+        <p class="lugar__nombre" data-campo="lugarNombre"></p>
+        <p class="lugar__dir" data-campo="lugarDireccion"></p>
+        <p class="lugar__hora">Sábado 10 de octubre · 5:00 p. m.</p>
+      </div>
+      <div class="mapa marco">
+        <iframe id="mapa" title="Mapa de la ubicación" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="botones">
+        <a id="btn-maps" class="btn btn--oro" target="_blank" rel="noopener">📍 Google Maps</a>
+        <a id="btn-waze" class="btn btn--borde" target="_blank" rel="noopener">🚗 Waze</a>
+      </div>
+    </section>
+
+    <!-- ===== Vestimenta (se oculta si no está configurada) ===== -->
+    <section class="seccion revelar" data-requiere="vestimenta">
+      <h2 class="titulo">Código de vestimenta</h2>
+      <p class="vestimenta" aria-hidden="true">👔 👗</p>
+      <p class="texto-grande" data-campo="vestimenta"></p>
+      <p class="nota" data-campo="vestimentaNota"></p>
+    </section>
+
+    <!-- ===== Galería ===== -->
+    <section class="seccion revelar">
+      <h2 class="titulo">Momentos</h2>
+      <p class="subtitulo">Toca una foto para verla completa</p>
+      <div id="galeria" class="galeria"></div>
+    </section>
+
+    <!-- ===== Tesis ===== -->
+    <section class="seccion seccion--oscura revelar">
+      <h2 class="titulo">Mi trabajo de graduación</h2>
+      <div class="tesis">
+        <p class="tesis__etiqueta">&lt;tesis&gt;</p>
+        <p class="tesis__titulo" data-campo="tesisTitulo"></p>
+        <p class="tesis__asesor">Asesor: <span data-campo="tesisAsesor"></span></p>
+        <p class="tesis__etiqueta">&lt;/tesis&gt;</p>
+      </div>
+      <a id="btn-tesis" class="btn btn--borde" target="_blank" rel="noopener">📄 Leer la tesis</a>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p class="pie__lema">“Id y enseñad a todos”</p>
+    <p class="pie__firma">Ing. Brandon Mauricio Noj Romero · 2026</p>
+    <p class="pie__codigo">&lt;/&gt; hecho con código y gratitud</p>
+  </footer>
+
+  <!-- ===== Visor de fotos ===== -->
+  <div id="visor" class="visor" hidden>
+    <button class="visor__cerrar" aria-label="Cerrar">×</button>
+    <button class="visor__nav visor__nav--ant" aria-label="Anterior">‹</button>
+    <img alt="">
+    <button class="visor__nav visor__nav--sig" aria-label="Siguiente">›</button>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
