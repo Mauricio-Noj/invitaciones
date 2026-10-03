@@ -116,6 +116,13 @@
     listaFamilias.appendChild(li);
   });
 
+  /* ---------- Tarjeta de regalo ---------- */
+  const carta = $("#carta-regalo");
+  carta.addEventListener("click", () => {
+    const volteada = carta.classList.toggle("carta--volteada");
+    carta.setAttribute("aria-pressed", volteada);
+  });
+
   /* ---------- Galería + visor ---------- */
   const galeria = $("#galeria");
   CONFIG.galeria.forEach((foto, i) => {

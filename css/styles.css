@@ -419,6 +419,102 @@ img { max-width: 100%; height: auto; display: block; }
 /* ===== Vestimenta ===== */
 .vestimenta { font-size: 2.6rem; margin: 1rem 0 0; }
 
+/* ===== Tarjeta de regalo ===== */
+.carta {
+  display: block;
+  width: min(100%, 300px);
+  aspect-ratio: 5 / 7;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  perspective: 1200px;
+  font: inherit;
+  color: inherit;
+}
+.carta:focus-visible { outline: 3px solid var(--oro-claro); outline-offset: 6px; border-radius: 18px; }
+.carta__interior {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .9s cubic-bezier(.2, .8, .2, 1);
+}
+.carta:hover .carta__interior { transform: rotateY(8deg); }
+.carta--volteada .carta__interior,
+.carta--volteada:hover .carta__interior { transform: rotateY(180deg); }
+.carta__cara {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  border: 7px solid var(--crema);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .45), 0 0 40px rgba(201, 164, 92, .15);
+}
+/* Dorso: azul marino con marco dorado */
+.carta__dorso {
+  padding: 18px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(201, 164, 92, .18), transparent 60%),
+    radial-gradient(rgba(201, 164, 92, .12) 1px, transparent 1px) 0 0 / 14px 14px,
+    #0f0e2e;
+}
+.carta__marco {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid rgba(201, 164, 92, .55);
+  border-radius: 6px;
+}
+.carta__titulo {
+  font: 400 2.6rem/1.05 var(--f-script);
+  color: var(--oro-claro);
+  text-shadow: 0 0 18px rgba(230, 205, 143, .55);
+  padding: 0 10px;
+}
+.carta__toca {
+  margin-top: 1rem;
+  font: .7rem var(--f-codigo);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--oro);
+  animation: latido 2s ease-in-out infinite;
+}
+@keyframes latido { 50% { opacity: .35; } }
+.carta__esquina { position: absolute; color: var(--oro); font-size: 1.1rem; }
+.carta__esquina--sup { top: 10px; left: 12px; }
+.carta__esquina--inf { bottom: 10px; right: 12px; transform: rotate(180deg); }
+/* Frente: el mensaje */
+.carta__frente {
+  transform: rotateY(180deg);
+  gap: .7rem;
+  padding: 26px 22px;
+  background: linear-gradient(180deg, #fffdf8, #f6efdf);
+  color: var(--tinta);
+}
+.carta__icono { font-size: 2.6rem; line-height: 1; }
+.carta__etiqueta { font: 400 2.1rem/1 var(--f-script); color: #9c7c3c; }
+.carta__texto { font: 500 1.08rem/1.5 var(--f-titulo); }
+.carta__nota { font-size: .76rem; line-height: 1.5; color: var(--tinta-suave); }
+.carta__volver {
+  margin-top: .3rem;
+  font: .68rem var(--f-codigo);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--oro);
+}
+
 /* ===== Galería ===== */
 .galeria {
   display: grid;
