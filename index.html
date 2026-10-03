@@ -7,9 +7,9 @@
   <meta name="description" content="Te invito a celebrar mi graduación como Ingeniero en Ciencias y Sistemas. Sábado 10 de octubre de 2026, 5:00 pm.">
   <meta property="og:title" content="¡Lo logré! · Ing. Brandon Mauricio Noj Romero">
   <meta property="og:description" content="Celebremos juntos mi graduación como Ingeniero en Ciencias y Sistemas · Sábado 10 de octubre, 5:00 pm">
-  <meta property="og:image" content="img/IMG_5.jpeg">
+  <meta property="og:image" content="https://mauricio-noj.github.io/invitaciones/img/IMG_5.jpeg">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#14133a">
+  <meta name="theme-color" content="#07061a">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bloqueado">
+
+  <!-- Fondo animado: red de partículas -->
+  <canvas id="estrellas" class="estrellas" aria-hidden="true"></canvas>
 
   <!-- ===== Pantalla de entrada ===== -->
   <div id="intro" class="intro" role="dialog" aria-label="Abrir invitación">
@@ -37,13 +40,20 @@
   <main>
     <!-- ===== Portada ===== -->
     <header class="portada">
-      <p class="portada__univ">Universidad de San Carlos de Guatemala<br><span>Facultad de Ingeniería</span></p>
-      <p class="portada__logre">¡Lo logré!</p>
-      <h1 class="portada__nombre" data-campo="nombre"></h1>
-      <p class="portada__titulo" data-campo="titulo"></p>
-      <figure class="portada__foto marco">
-        <img src="img/IMG_5.jpeg" alt="Brandon Noj con toga y birrete en el acto de graduación" width="2048" height="1365">
-      </figure>
+      <div class="portada__sol" aria-hidden="true"></div>
+      <div class="portada__piso" aria-hidden="true"></div>
+      <div class="portada__contenido">
+        <p class="portada__univ">Universidad de San Carlos de Guatemala<br><span>Facultad de Ingeniería</span></p>
+        <p class="portada__logre">¡Lo logré!</p>
+        <h1 class="portada__nombre" data-campo="nombre"></h1>
+        <p class="portada__titulo" data-campo="titulo"></p>
+        <figure class="portada__foto tilt">
+          <span class="neon-marco neon-marco--giro">
+            <img src="img/IMG_5.jpeg" alt="Brandon Noj con toga y birrete en el acto de graduación" width="2048" height="1365">
+          </span>
+          <span class="tilt__brillo" aria-hidden="true"></span>
+        </figure>
+      </div>
       <a href="#mensaje" class="portada__bajar" aria-label="Ver más">
         <span></span>
       </a>
@@ -51,8 +61,8 @@
 
     <!-- ===== Mensaje ===== -->
     <section id="mensaje" class="seccion revelar">
-      <div class="codigo" aria-label="Mensaje en código">
-<pre><span class="c-com">// Después de años de esfuerzo...</span>
+      <div class="codigo tilt" aria-label="Mensaje en código">
+<pre><span class="c-com">// Después de 6 años de esfuerzo...</span>
 <span class="c-kw">const</span> <span class="c-var">graduado</span> = {
   nombre: <span class="c-str">"Brandon Mauricio Noj Romero"</span>,
   titulo: <span class="c-str">"Ingeniero en Ciencias y Sistemas"</span>,
@@ -60,9 +70,10 @@
 };
 
 <span class="c-var">graduado</span>.<span class="c-fn">celebrarCon</span>(<span class="c-str">"contigo"</span>);</pre>
+        <span class="tilt__brillo" aria-hidden="true"></span>
       </div>
       <p class="texto-grande">
-        Cada línea de código, cada desvelo y cada reto me trajeron hasta aquí.
+        Seis años de código, desvelos y retos me trajeron hasta aquí.
         Hoy cierro este capítulo y nada me haría más feliz que <strong>celebrarlo contigo</strong>.
       </p>
     </section>
@@ -91,19 +102,22 @@
       <h2 class="titulo">Con gratitud</h2>
       <p class="subtitulo">Este logro no es solo mío</p>
       <div class="dedicatoria">
-        <article>
+        <article class="tilt">
           <h3>A Dios</h3>
           <p>Por permitirme alcanzar esta etapa y enseñarme que cada tropiezo fue una lección.</p>
+          <span class="tilt__brillo" aria-hidden="true"></span>
         </article>
-        <article>
+        <article class="tilt">
           <h3>A mis padres</h3>
           <p class="dedicatoria__nombres">Víctor Noj &amp; Ana Romero</p>
           <p>Por ser la base firme sobre la cual he construido mi vida. Su amor y respaldo han estado en cada paso.</p>
+          <span class="tilt__brillo" aria-hidden="true"></span>
         </article>
-        <article>
+        <article class="tilt">
           <h3>A mis hermanos</h3>
           <p class="dedicatoria__nombres">Víctor Alfonso, Óscar Enrique &amp; Edgar Adolfo</p>
           <p>Por acompañarme siempre con su apoyo incondicional.</p>
+          <span class="tilt__brillo" aria-hidden="true"></span>
         </article>
       </div>
       <article class="familias">
@@ -126,7 +140,7 @@
         <p class="lugar__dir" data-campo="lugarDireccion"></p>
         <p class="lugar__hora">Sábado 10 de octubre · 5:00 p. m.</p>
       </div>
-      <div class="mapa marco">
+      <div class="mapa neon-marco">
         <iframe id="mapa" title="Mapa de la ubicación" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="botones">
@@ -151,10 +165,10 @@
         <span class="carta__interior">
           <span class="carta__cara carta__dorso" aria-hidden="true">
             <span class="carta__marco">
-              <span class="carta__esquina carta__esquina--sup">✦</span>
+              <span class="carta__esquina carta__esquina--sup">♠</span>
               <span class="carta__titulo">Mi mejor regalo</span>
               <span class="carta__toca">toca aquí</span>
-              <span class="carta__esquina carta__esquina--inf">✦</span>
+              <span class="carta__esquina carta__esquina--inf">♦</span>
             </span>
           </span>
           <span class="carta__cara carta__frente">
@@ -173,20 +187,21 @@
     </section>
 
     <!-- ===== Galería ===== -->
-    <section class="seccion revelar">
+    <section class="seccion seccion--oscura revelar">
       <h2 class="titulo">Momentos</h2>
       <p class="subtitulo">Toca una foto para verla completa</p>
       <div id="galeria" class="galeria"></div>
     </section>
 
     <!-- ===== Tesis ===== -->
-    <section class="seccion seccion--oscura revelar">
+    <section class="seccion revelar">
       <h2 class="titulo">Mi trabajo de graduación</h2>
-      <div class="tesis">
+      <div class="tesis tilt">
         <p class="tesis__etiqueta">&lt;tesis&gt;</p>
         <p class="tesis__titulo" data-campo="tesisTitulo"></p>
         <p class="tesis__asesor">Asesor: <span data-campo="tesisAsesor"></span></p>
         <p class="tesis__etiqueta">&lt;/tesis&gt;</p>
+        <span class="tilt__brillo" aria-hidden="true"></span>
       </div>
       <a id="btn-tesis" class="btn btn--borde" target="_blank" rel="noopener">📄 Leer la tesis</a>
     </section>
@@ -195,8 +210,8 @@
 
   <footer class="pie">
     <p class="pie__lema">“Id y enseñad a todos”</p>
-    <p class="pie__firma">Ing. Brandon Mauricio Noj Romero · 2026</p>
-    <p class="pie__codigo">&lt;/&gt; hecho con código y gratitud</p>
+    <p class="pie__firma">Graduación · 2026</p>
+    <p class="pie__codigo">&lt;/&gt; Ing. Brandon Mauricio Noj Romero</p>
   </footer>
 
   <!-- ===== Visor de fotos ===== -->
