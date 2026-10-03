@@ -25,24 +25,6 @@ const CONFIG = {
   vestimenta: "",
   vestimentaNota: "",
 
-  familias: [
-    "Noj Hernández",
-    "Noj de León",
-    "Noj Morales",
-    "Noj Valle",
-    "Noj Calanche",
-    "Salomon Qic",
-    "Lutin Noj",
-    "Ortega",
-    "Hernández Ortega",
-    "Noj Romero",
-  ],
-
-  tesisTitulo:
-    "Desarrollo e implementación de una plataforma digital integral para optimizar los procesos académicos y de admisión en el Instituto Técnico Vocacional Dr. Imrich Fischmann",
-  tesisAsesor: "Ing. Moisés Eduardo Velásquez Oliva",
-  tesisUrl: "https://biblio.ingenieria.usac.edu.gt/tesis26/T17428.pdf",
-
   galeria: [
     { src: "img/img_4.jpeg", alt: "Recibiendo el título de manos de la autoridad de la Facultad" },
     { src: "img/img_3.jpeg", alt: "Juramentación como profesional" },

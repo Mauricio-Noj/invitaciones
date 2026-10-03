@@ -13,42 +13,18 @@
     if (!CONFIG[el.dataset.requiere]) el.remove();
   });
 
+  /* ---------- Empezar siempre desde arriba ---------- */
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  window.scrollTo(0, 0);
+
   /* ---------- Pantalla de entrada ---------- */
   const intro = $("#intro");
   const audio = $("#audio");
   const btnMusica = $("#btn-musica");
 
-  const lineas = [
-    "$ ./graduacion.sh --usuario brandon",
-    "> Compilando 6 años de esfuerzo...",
-    "> Ejecutando pruebas finales......  OK",
-    "> Tesis aprobada ✔",
-    "> Título: Ingeniero en Ciencias y Sistemas",
-    "> Build exitoso. Hora de celebrar 🎉",
-  ];
-
-  function escribirIntro() {
-    const pre = $("#intro-codigo");
-    if (reducirMovimiento) {
-      pre.textContent = lineas.join("\n");
-      return;
-    }
-    let l = 0, c = 0;
-    (function paso() {
-      if (l >= lineas.length) return;
-      if (c <= lineas[l].length) {
-        pre.textContent = lineas.slice(0, l).join("\n") + (l ? "\n" : "") + lineas[l].slice(0, c);
-        c++;
-        setTimeout(paso, l === 0 ? 45 : 22);
-      } else {
-        l++; c = 0;
-        setTimeout(paso, 260);
-      }
-    })();
-  }
-  escribirIntro();
-
   $("#btn-abrir").addEventListener("click", () => {
+    window.scrollTo(0, 0);
     intro.classList.add("intro--fuera");
     document.body.classList.remove("bloqueado");
     setTimeout(() => intro.remove(), 900);
@@ -115,22 +91,15 @@
   $("#btn-waze").href = CONFIG.coordenadas
     ? `https://waze.com/ul?ll=${CONFIG.coordenadas}&navigate=yes`
     : `https://waze.com/ul?q=${busqueda}&navigate=yes`;
-  $("#btn-tesis").href = CONFIG.tesisUrl;
-
-  /* ---------- Familias ---------- */
-  const listaFamilias = $("#familias");
-  CONFIG.familias.forEach((f) => {
-    const li = document.createElement("li");
-    li.textContent = `Familia ${f}`;
-    listaFamilias.appendChild(li);
-  });
 
   /* ---------- Tarjeta de regalo ---------- */
   const carta = $("#carta-regalo");
-  carta.addEventListener("click", () => {
+  function voltearCarta() {
     const volteada = carta.classList.toggle("carta--volteada");
     carta.setAttribute("aria-pressed", volteada);
-  });
+  }
+  carta.addEventListener("click", voltearCarta);
+  $("#toca-carta").addEventListener("click", voltearCarta);
 
   /* ---------- Galería + visor ---------- */
   const galeria = $("#galeria");

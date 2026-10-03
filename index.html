@@ -23,9 +23,12 @@
 
   <!-- ===== Pantalla de entrada ===== -->
   <div id="intro" class="intro" role="dialog" aria-label="Abrir invitación">
-    <div class="intro__terminal" aria-hidden="true">
-      <div class="intro__barra"><span></span><span></span><span></span><p>graduacion.sh</p></div>
-      <pre id="intro-codigo" class="intro__codigo"></pre>
+    <div class="intro__tarjeta">
+      <p class="intro__inv">Invitación</p>
+      <p class="intro__linea">a la celebración de la graduación del</p>
+      <p class="intro__ing">Ingeniero</p>
+      <h2 class="intro__nombre">Brandon Mauricio<br>Noj Romero</h2>
+      <span class="intro__adorno" aria-hidden="true">✦</span>
     </div>
     <button id="btn-abrir" class="btn btn--oro intro__btn">Abrir invitación</button>
     <p class="intro__nota">Se reproducirá música 🎵</p>
@@ -120,11 +123,6 @@
           <span class="tilt__brillo" aria-hidden="true"></span>
         </article>
       </div>
-      <article class="familias">
-        <h3>A mi familia</h3>
-        <p>Por su cariño, su apoyo y por ser parte de este camino.</p>
-        <ul id="familias" class="familias__lista"></ul>
-      </article>
       <blockquote class="memoria">
         <p>“Mi primer maestro y el origen de mi pasión por la tecnología. Su ejemplo sigue guiando mi camino.”</p>
         <cite>En memoria de Mario Romero</cite>
@@ -160,7 +158,7 @@
     <!-- ===== Regalo (tarjeta que se voltea) ===== -->
     <section class="seccion revelar">
       <h2 class="titulo">Un detalle especial</h2>
-      <p class="subtitulo">Toca la tarjeta para descubrirlo</p>
+      <button type="button" id="toca-carta" class="subtitulo subtitulo--oro">Toca la tarjeta para descubrirlo</button>
       <button id="carta-regalo" class="carta" aria-pressed="false" aria-label="Voltear tarjeta de regalo">
         <span class="carta__interior">
           <span class="carta__cara carta__dorso" aria-hidden="true">
@@ -193,18 +191,6 @@
       <div id="galeria" class="galeria"></div>
     </section>
 
-    <!-- ===== Tesis ===== -->
-    <section class="seccion revelar">
-      <h2 class="titulo">Mi trabajo de graduación</h2>
-      <div class="tesis tilt">
-        <p class="tesis__etiqueta">&lt;tesis&gt;</p>
-        <p class="tesis__titulo" data-campo="tesisTitulo"></p>
-        <p class="tesis__asesor">Asesor: <span data-campo="tesisAsesor"></span></p>
-        <p class="tesis__etiqueta">&lt;/tesis&gt;</p>
-        <span class="tilt__brillo" aria-hidden="true"></span>
-      </div>
-      <a id="btn-tesis" class="btn btn--borde" target="_blank" rel="noopener">📄 Leer la tesis</a>
-    </section>
 
   </main>
 
